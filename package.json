@@ -1,0 +1,30 @@
+{
+  "name": "trezor-chrome-extension",
+  "version": "0.0.1",
+  "description": "Chrome extension for communication with Trezor",
+  "main": "index.js",
+  "keywords": [
+    "chrome",
+    "trezor",
+    "bitcoin"
+  ],
+  "contributors": [{
+    "name":"William Wolf",
+    "mail": "throughnothing@gmail.com"
+  }, {
+    "name": "Karel Bílek",
+    "mail": "kb@karelbilek.com"
+  }],
+  "license": "Public domain",
+  "homepage": "https://github.com/throughnothing/chrome-trezor",
+  "dependencies": {
+    "protobufjs": "~3.8.2",
+    "promise": "~5.0.0"
+  },
+    "devDependencies": {
+       "browserify": "~3.32.0"
+    },
+  "scripts": {
+    "build": "proto2js trezor-common/protob/messages.proto -commonjs > messages_proto.js && browserify index.js -d -o extension/index.js"
+  }
+}
